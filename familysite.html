@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>family site</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        /* family site css */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .family__site {
+            position: relative;
+            width: 210px;
+            top: 200px;
+            left: 20px;
+        }
+
+        .family__site button {
+            width: 100%;
+            background: none;
+            border: 0;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .family__site button::after {
+            content: "\e944";
+            font-family: xeicon;
+            float: right;
+            margin-top: 2px;
+        }
+
+        .family__site ul {
+            width: 240px;
+            position: absolute;
+            bottom: 50px;
+            background: navajowhite;
+            border: 1px solid grey;
+            box-shadow: 0 0 5px grey;
+            text-indent: 6px;
+            font-size: 16px;
+            display: none;
+        }
+
+        .family__site ul li {
+            line-height: 26px;
+        }
+
+        .family__site ul li:hover {
+            background: blue;
+        }
+
+        .family__site ul li:hover a {
+            color: white;
+        }
+    </style>
+    <script>
+        /* family__site script */
+        /* family__site의 버튼을 누르거나 포커싱하면 toggle 되도록 함 */
+        $(function () {
+            $(".family__site button").on("click", function () {
+                //.on은 여러가지 메서드 사용가능하게 해준다.
+                //다른 방법1 $(".family__site button").on("click focusin", function () {
+                //다른 방법2 $(".family__site button").click(function () {
+                $(".family__site > ul").slideToggle();
+            });
+        }); //ready
+    </script>
+</head>
+
+<body>
+    <section class="family__site">
+        <button type="button">패밀리사이트</button>
+        <ul>
+            <li><a href="#">패밀리사이트</a></li>
+            <li><a href="#">바로가기1</a></li>
+            <li><a href="#">바로가기2</a></li>
+            <li><a href="#">바로가기3</a></li>
+            <li><a href="#">바로가기4</a></li>
+        </ul>
+    </section>
+</body>
+
+</html>
